@@ -1,0 +1,22 @@
+---
+name: Fetch data
+on:
+  push:
+    branches: [develop]
+# on:
+#   schedule:
+#   # runs from 10am to 7pm Brazil's time
+#     - cron: '*/30 13-22 * * 1-5'
+#       branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DB_USERNAME: ${{ secrets.DB_USERNAME }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+    steps:
+      - name: Run docker container locally
+        run: |
+          docker run -it -d -e $DB_USERNAME -e $DB_NAME -e $DB_PASSWORD $DOCKER_HUB_USERNAME/daily-crawler:latest
