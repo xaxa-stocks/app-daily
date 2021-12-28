@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Run docker container locally
         run: |
-          docker run -it -d -e $DB_USERNAME -e $DB_NAME -e $DB_PASSWORD $DOCKER_HUB_USERNAME/daily-crawler:latest
+          docker run -it -e $DB_USERNAME -e $DB_NAME -e $DB_PASSWORD $DOCKER_HUB_USERNAME/daily-crawler:latest
