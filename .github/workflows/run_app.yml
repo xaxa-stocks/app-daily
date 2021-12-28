@@ -10,7 +10,7 @@ on:
 #       branches: [main]
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       DB_USERNAME: ${{ secrets.DB_USERNAME }}
       DB_NAME: ${{ secrets.DB_NAME }}
@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Run docker container locally
         run: |
-          docker run -it -e $DB_USERNAME -e $DB_NAME -e $DB_PASSWORD $DOCKER_HUB_USERNAME/daily-crawler:latest
+          docker run -it -e $DB_USERNAME -e $DB_NAME -e $DB_PASSWORD $DOCKER_HUB_USERNAME/dev-app-daily:latest
