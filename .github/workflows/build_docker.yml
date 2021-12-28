@@ -1,8 +1,8 @@
 ---
 name: Build docker image
 on:
-  push:
-    branches: [develop]
+  merge:
+    branches: [main]
 jobs:
   build_image_docker:
     runs-on: ubuntu-latest
@@ -24,8 +24,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          # context: /
-          # file: /Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/app-daily:0.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/app-daily:latest
 
