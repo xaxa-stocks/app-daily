@@ -17,6 +17,6 @@ jobs:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
-      - name: Run docker container locally
+      - name: Run python program on github agent
         run: |
           docker run -e DB_USERNAME -e DB_NAME -e DB_PASSWORD $DOCKER_HUB_USERNAME/dev-app-daily:latest
