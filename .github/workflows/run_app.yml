@@ -1,13 +1,9 @@
----
 name: Fetch data
-# on:
-#   push:
-#     branches: [develop]
 on:
   schedule:
   # runs from 10am to 7pm Brazil's time
-    - cron: '*/2 10-19 * * 1-5'
-      branches: [main]
+    - cron: '*/3 10-19 * * 1-5'
+      branches: [develop]
 
 jobs:
   deploy:
