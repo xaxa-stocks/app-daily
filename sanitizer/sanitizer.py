@@ -1,10 +1,11 @@
 from crawler.daily_crawler import Crawler
+from crawler.sanitizer import Sanitizer
 
-py_crawler = Crawler()
+py_sanitizer = Sanitizer()
 
-fiis_list = py_crawler.get_fii_list()
+fiis_list = py_sanitizer.get_fii_list()
 
-py_crawler.add_price_data_to_table(fiis_list,"daily_info")
+py_sanitizer.retrieve_fii(fiis_list)
 
 
 
