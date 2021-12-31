@@ -17,4 +17,7 @@ jobs:
     steps:
       - name: Run python program on github agent
         run: |
-          docker run -e DB_USERNAME -e DB_NAME -e DB_PASSWORD $DOCKER_HUB_USERNAME/dev-app-daily:latest
+          docker run -e DB_USERNAME -e DB_NAME -e DB_PASSWORD $DOCKER_HUB_USERNAME/${{ env.CONTEXT }}-${{ env.NAME }}:latest
+        env:
+          CONTEXT: dev
+          NAME: app-daily
