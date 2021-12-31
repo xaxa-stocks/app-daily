@@ -1,4 +1,3 @@
-from crawler.daily_crawler import Crawler
 from crawler.sanitizer import Sanitizer
 
 py_sanitizer = Sanitizer()
