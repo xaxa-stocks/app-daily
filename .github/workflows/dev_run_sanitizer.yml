@@ -1,11 +1,10 @@
-name: Run app in dev
+name: Run sanitizer in dev
 on:
   schedule:
-  # runs from 10am to 7pm Brazil's time
-    - cron: '*/30 13-22 * * 1-5'
+  # run once every 9am
+    - cron: '40 17 * * 1-5'
       branches:
         - develop
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,4 +19,4 @@ jobs:
           docker run -e DB_USERNAME -e DB_NAME -e DB_PASSWORD $DOCKER_HUB_USERNAME/${{ env.CONTEXT }}-${{ env.NAME }}:latest
         env:
           CONTEXT: dev
-          NAME: app-daily
+          NAME: sanitizer
