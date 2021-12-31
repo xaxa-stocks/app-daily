@@ -7,8 +7,8 @@ jobs:
   build_image_docker:
     runs-on: ubuntu-latest
     env:
-      CONTEXT: ${{ dev }}
-      NAME: ${{ sanitizer }}
+      CONTEXT: dev
+      NAME: sanitizer
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
           context: sanitizer/
           file: sanitizer/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/$CONTEXT-$NAME:0.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/$CONTEXT-$NAME:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/env.CONTEXT-env.NAME:0.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/env.CONTEXT-env.NAME:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
