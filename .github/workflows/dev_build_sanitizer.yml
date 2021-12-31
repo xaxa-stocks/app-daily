@@ -31,7 +31,7 @@ jobs:
           context: sanitizer/
           file: sanitizer/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/$CONTEXT-$NAME:0.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/$CONTEXT-$NAME:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${CONTEXT}-${NAME}:0.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/${CONTEXT}-${NAME}:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
