@@ -9,6 +9,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install git+https://github.com/xaxa-stocks/crawlerlib.git@develop
 
-COPY sanitize.py .
+COPY sanitizer.py .
 
 CMD [ "python", "sanitizer.py" ]
