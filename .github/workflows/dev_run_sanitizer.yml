@@ -2,7 +2,7 @@ name: Run sanitizer in dev
 on:
   schedule:
   # run once every 9am
-    - cron: '50 17 * * 1-5'
+    - cron: '30 23 * * 2-6'
       branches:
         - develop
 jobs:

@@ -1,7 +1,8 @@
 ---
 name: Build app docker image in dev
 on:
-  push:
+  # push:
+  workflow_dispatch:
     branches: [develop]
 jobs:
   build_image_docker:
