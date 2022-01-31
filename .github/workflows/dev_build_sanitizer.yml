@@ -1,7 +1,8 @@
 ---
 name: Build dev sanitizer
 on:
-  push:
+  # push:
+  workflow_dispatch:
     branches: [develop]
 jobs:
   build_image_docker:
