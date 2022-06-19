@@ -1,10 +1,3 @@
-from crawler.daily_crawler import Crawler
+from crawler.daily_crawler import get_and_add_asset
 
-py_crawler = Crawler()
-
-fiis_list = py_crawler.get_fii_list()
-
-py_crawler.add_price_data_to_table(fiis_list,"daily_info")
-
-
-
+get_and_add_asset(collection="daily_info")
