@@ -1,3 +1,3 @@
-from crawler.daily_crawler import get_and_add_asset
+from crawler.daily_crawler import get_and_add_asset as deploy
 
-get_and_add_asset(collection="daily_info")
+deploy()
